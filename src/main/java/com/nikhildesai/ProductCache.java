@@ -10,22 +10,22 @@ import java.util.Map;
  */
 public class ProductCache {
 
-    // Product Cache for storing product an 'IntegerPair' ... (x,y) => x * y
-    private static Map<IntegerPair, Double> products = new HashMap<>();
+    // Cache for storing product for a 'NumberPair' ... (x,y) => x * y
+    private static Map<NumberPair, Double> products = new HashMap<>();
 
     /**
-     * Returns product of two integers and caches it if not already present in the cache
+     * Returns product of two numbers and caches it if not already present in the cache
      *
      * @param x
      * @param y
      * @return x * y
      */
     public static Double getProduct(Double x, Double y) {
-        IntegerPair integerPair = new IntegerPair(x,y);
-        Double product = products.get(integerPair);
+        NumberPair numberPair = new NumberPair(x,y);
+        Double product = products.get(numberPair);
         if (product == null) {
             product = x.doubleValue() * y.doubleValue();
-            products.put(integerPair, product);
+            products.put(numberPair, product);
         }
         return product;
     }

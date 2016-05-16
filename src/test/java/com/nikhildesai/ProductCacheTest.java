@@ -36,12 +36,21 @@ public class ProductCacheTest {
                 1, ProductCache.getCurrentCacheSize());
     }
 
-//    @Test
-//    public void testProductExceedsMaxInteger() {
-//        ProductCache.reset();
-//        int product = ProductCache.getProduct(Integer.MAX_VALUE, Integer.MAX_VALUE);
-//        System.out.println(product);
-//        Assert.assertEquals("Product should be cached",
-//                1, ProductCache.getCurrentCacheSize());
-//    }
+    @Test
+    public void testProduct() {
+        ProductCache.reset();
+        Double product = ProductCache.getProduct(2d, 3d);
+        Assert.assertEquals(Double.valueOf(6d), product);
+        Assert.assertEquals("Product should be cached",
+                1, ProductCache.getCurrentCacheSize());
+    }
+
+    @Test
+    public void testProductNegative() {
+        ProductCache.reset();
+        Double product = ProductCache.getProduct(-2d, 3d);
+        Assert.assertEquals(Double.valueOf(-6d), product);
+        Assert.assertEquals("Product should be cached",
+                1, ProductCache.getCurrentCacheSize());
+    }
 }
