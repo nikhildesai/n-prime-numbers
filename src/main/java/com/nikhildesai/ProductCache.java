@@ -14,7 +14,7 @@ public class ProductCache {
     private static Map<NumberPair, Double> products = new HashMap<>();
 
     /**
-     * Returns product of two numbers and caches it if not already present in the cache
+     * Returns product of two numbers and cache it if not already present in the cache
      *
      * @param x
      * @param y

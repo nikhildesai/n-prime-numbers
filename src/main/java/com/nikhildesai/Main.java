@@ -18,7 +18,7 @@ public class Main {
 
             List<Double> numbers = new ArrayList<>();
             numbers.add(1d);
-            // get all primes between 1 and n
+            // get first n primes
             numbers.addAll(PrimeUtils.getPrimes(n));
 
             // format and print a table
@@ -34,7 +34,7 @@ public class Main {
                     }
                     System.out.format("%5.0f ", product);
                 }
-                System.out.println('\n');
+                System.out.println(System.getProperty("line.separator"));
             }
         }
     }
@@ -50,8 +50,9 @@ public class Main {
             return null;
         }
 
-        if (n <= 0 || n > Integer.MAX_VALUE) {
-            System.out.println("Please enter a positive number between 1 and " + Integer.MAX_VALUE);
+        // limit input range from 1 to 10000
+        if (n <= 0 || n > PrimeUtils.MAX_NO_OF_PRIMES_SUPPORTED) {
+            System.out.println("Please enter a positive number between 1 and " + PrimeUtils.MAX_NO_OF_PRIMES_SUPPORTED);
             return null;
         }
 

@@ -19,13 +19,13 @@ public class PrimeUtilsTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testIsPrimeInvalidInputGreaterThanMax() {
-        PrimeUtils.isPrime(Integer.MAX_VALUE + 1);
+    public void testIsPrimeInvalidInputLessThanZero() {
+        PrimeUtils.isPrime(-1);
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testIsPrimeInvalidInputLessThanZero() {
-        PrimeUtils.isPrime(-1);
+    public void testIsPrimeInvalidInputGreaterThanLimit() {
+        PrimeUtils.isPrime(104730);
     }
 
     @Test (expected = IllegalArgumentException.class)
@@ -41,7 +41,7 @@ public class PrimeUtilsTest {
 
     @Test
     public void testGetPrimes() {
-        List<Double> primes = PrimeUtils.getPrimes(10);
+        List<Double> primes = PrimeUtils.getPrimes(4);
         Assert.assertTrue(primes.contains(2d));
         Assert.assertTrue(primes.contains(3d));
         Assert.assertTrue(primes.contains(5d));
@@ -57,6 +57,11 @@ public class PrimeUtilsTest {
     @Test (expected = IllegalArgumentException.class)
     public void testGetPrimesInvalidInputNegative() {
         PrimeUtils.getPrimes(-4);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testGetPrimesInvalidInputGreaterThan10000() {
+        PrimeUtils.getPrimes(10001);
     }
 
     @Test (expected = IllegalArgumentException.class)

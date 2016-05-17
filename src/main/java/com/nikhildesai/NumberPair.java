@@ -1,6 +1,11 @@
 package com.nikhildesai;
 
 /**
+ * A pair of numbers {x,y}.
+ *
+ * Two NumberPairs {x1,y1}, {x2,y2} are equal if
+ * (x1 = x2 and y1 = y2) OR (x1 = y2 and x2=y1)
+ *
  * Created by ndesai on 5/16/16.
  */
 public class NumberPair {
