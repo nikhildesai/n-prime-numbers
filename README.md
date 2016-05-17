@@ -1,8 +1,8 @@
 # n-prime-numbers
 
-A simple program to read a positive integer N and draw a table showing prime numbers between 1 and N on the first row and column. Every other cell in the table is the product of the prime number in the first row and first column corresponding to that cell
+A simple program to read a positive integer N and draw a table showing the first N prime numbers on the first row and column. Every other cell in the table is the product of the prime numbers in the first row and first column corresponding to that cell
 
-e.g. if the input number is 10, the table will be:
+e.g. if the input number is 4, the table will be:
 
           2     3     5     7 
 
@@ -30,7 +30,7 @@ mvn clean install (Pre-reqs: JDK 1.8, Maven)
 ```
 java -jar <path to jar file>
 
-Enter a number: 10
+Enter a number: 4
 
           2     3     5     7 
 
